@@ -44,6 +44,11 @@ export class TaskController {
 
   }
 
+  @Get('get-tasks-for-address')
+  async fetchTasks(@Body('address') address: string) {
+    return await this.taskService.findAll(address)
+  }
+
   @Get(':id')
   async findOneTask(@Param('id') id: string) {
     return await this.taskService.findById(id);

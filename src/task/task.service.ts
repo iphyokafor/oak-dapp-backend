@@ -151,4 +151,20 @@ export class TaskService {
 
   }
 
+  /**
+ * This method returns a list of all tasks by an address
+ * @param address
+ * @returns
+ */
+  async findAll(address: string) {
+    try {
+
+      const result = await this.taskModel.find({ address })
+
+      return result;
+    } catch (e) {
+      throw new NotFoundException(e.message)
+    }
+  }
+
 }
