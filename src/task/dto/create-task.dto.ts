@@ -1,5 +1,7 @@
 export class CreateTaskDto {
 
+  providedId: string;
+
   timeSlot: Date;
 
   message: string;

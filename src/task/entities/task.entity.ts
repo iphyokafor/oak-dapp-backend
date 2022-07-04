@@ -9,6 +9,9 @@ export type TaskDocument = Task & Document;
 export class Task {
 
   @Prop()
+  providedId: string;
+
+  @Prop()
   timeSlot: Date;
 
   @Prop()
